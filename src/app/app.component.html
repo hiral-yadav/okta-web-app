@@ -1,0 +1,15 @@
+<div class="toolbar">
+  @if (isAuthenticated$ | async) {
+  <div>
+    <nav class="routes">
+      <a routerLink="/">Home</a>
+      <a routerLink="/users">Users</a>
+    </nav>
+  </div>
+  <a class="auth" (click)="signOut()">Sign Out</a>
+  } @else {
+  <a class="auth" (click)="signIn()">Sign In</a>
+  }
+</div>
+
+<router-outlet></router-outlet>
